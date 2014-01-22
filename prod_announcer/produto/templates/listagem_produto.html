@@ -1,0 +1,18 @@
+{% extends "utils/base.html"%}
+{% block page-title %}{{ block.super }} - Lista de Produtos Cadastrados{% endblock %}
+{% block content %}
+<div id="subcontent">
+       <h2>Listagem dos Produtos</h2>
+
+       <div class="clear"></div>
+</div> <!-- End subcontent id -->
+
+<div id="content">
+    {% for produto in produtos %}
+        <section class="produtos-{% cycle 'odd' 'even' %}">
+                {{ produto.get_nome_produto}}         
+        </section>
+    {% endfor %}
+</div> <!--- End content id --->
+
+{% endblock %}
